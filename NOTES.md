@@ -14,3 +14,5 @@
 * There is some caveat when using @Req() and @Res() decorators. Read "Request Object" on https://docs.nestjs.com/controllers.
 
 * DTO (Data Transfer Object) Schema is an object that specifies how data should be sent over the network. Nest recommends defining DTO Schema using classes.
+
+* Providers are plain JavaScript classes declared as "providers" in a NestJS module. Many of the basic Nest classes, such as services, repositories, factories, and helpers, can be treated as providers. The key idea behind a provider is that it can be injected as a dependency in the controllers. Controllers handle HTTP requests and more complex tasks (for example managing application logic, handling data storage and retrieval, etc.) are delegated to providers.

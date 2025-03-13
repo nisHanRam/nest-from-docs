@@ -8,17 +8,20 @@ import {
   Put,
 } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
+import { CatsService } from './cats.service';
 
 @Controller('cats')
 export class CatsController {
+  constructor(private catsService: CatsService) {} // This line injects CatsService into CatsController
+
   @Post()
-  create(@Body() createCatDto: CreateCatDto): string {
-    return 'This action adds a cat.';
+  create(@Body() createCatDto: CreateCatDto) {
+    this.catsService.create(createCatDto);
   }
 
   @Get()
-  findAll(): string {
-    return 'This action returns all cats';
+  findAll() {
+    this.catsService.findAll();
   }
 
   // METHOD-1 to get the params
